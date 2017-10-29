@@ -17,15 +17,61 @@ $(document).ready(function(){
 		$.getJSON(link, function(json){
 			var jsonData = json;
 			var tempInCelsius = Math.round(jsonData.main.temp - 273.15);
-			$("#location").text(jsonData.name + " ," + jsonData.sys.country);
+			var weatherDescription = jsonData.weather[0].description;
+			var weatherId = jsonData.weather[0].id;
+			$("#location").text(jsonData.name + ", " + jsonData.sys.country);
 			$("#temperature").text(tempInCelsius + " °" + "C");
-			$("weather-description").text(jsonData.weather[0].description);
+			$("#weather-description").text(weatherDescription);
+			
+			//Icon set statements
+			if(weatherId >= 200 && weatherId <= 232) {
+				$("#icon").prepend("<img src='http://openweathermap.org/img/w/11d.png' />");
+			} else if(weatherId >= 300 && weatherId <= 321) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/09d.png' />");	
+			} else if(weatherId >= 500 && weatherId <= 504) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/10d.png' />");
+			} else if (weatherId === 511) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/13d.png' />");
+			} else if (weatherId >= 520 && weatherId <= 531) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/09d.png' />");
+			} else if (weatherId >= 600 && weatherId <= 622) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/13d.png' />");
+			} else if (weatherId >= 701 && weatherId <= 781) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/50d.png' />");
+			} // I have to add DAY and NIGHT icon, depends on current time
+				else if (weatherId === 800) { 
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/01d.png' />");
+			} // I have to add DAY and NIGHT icon, depends on current time
+				else if (weatherId === 801) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/02d.png' />");
+			} else if (weatherId === 802) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/03d.png' />");
+			} else if (weatherId === 803 || weatherId <= 804) {
+					$("#icon").prepend("<img src='http://openweathermap.org/img/w/04d.png' />");
+			}
+
+
+
+			
+
+
+
+			// switch(weatherId) {
+			// 	case weatherId >= 300 && weatherId <= 321:
+			// 		$("#icon").prepend("<img src='http://openweathermap.org/img/w/09d.png' />");
+			// 		break;
+			// 	case weatherId >= 800 && weatherId <= 804:
+			// 		$("#icon").prepend("<img src='http://openweathermap.org/img/w/04d.png' />");	
+			// 		break;
+			// }
 		});
 
 	}
 
 
 	getLocation();
+
+
 
 
 });
