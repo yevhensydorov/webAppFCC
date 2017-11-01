@@ -11,8 +11,8 @@
 	<header class="main-header">
 		<p class="logo">FCC-W-A</p>
 		<div class="toogle-icon">
-			<a href="#" class="btn">Temp in °F</a>
-			<a href="#" class="btn">Temp in °C</a>
+			<button class="btn btn-f">Temp in °F</button>
+			<button class="btn btn-c btn-dis" disabled>Temp in °C</button>
 		</div>
 	</header>
 
@@ -20,7 +20,7 @@
 
 		<h1>FCC Weather App</h1>
 		<p id="location"></p>
-		<p id="temperature"></p>
+		<p><span id="temperature"></span><span id="temp-type"> °C</span></p>
 		<p id="weather-description"></p>
 		<p id="icon"></p>
 

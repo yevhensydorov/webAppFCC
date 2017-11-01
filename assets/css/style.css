@@ -27,24 +27,30 @@ p.logo {
 }
 
 .btn {
-	background-color:#7892c2;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:1px solid #4e6096;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:14px;
-	padding:10px 22px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
+	background-color: #7892c2;
+	-moz-border-radius: 28px;
+	-webkit-border-radius: 28px;
+	border-radius: 28px;
+	border: 1px solid #4e6096;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 14px;
+	padding: 10px 22px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #283966;
 }
+
 .btn:hover {
-	background-color:#476e9e;
+	background-color: #476e9e;
 }
+
 .btn:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
+}
+
+.btn-dis,
+.btn-dis:hover {
+	background-color: #a4a7ac;
 }
